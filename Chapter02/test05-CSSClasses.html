@@ -1,0 +1,27 @@
+<html ng-app>
+    <style>
+        .menu-disabled-true {
+            color: gray;
+        }
+    </style>
+    <body>
+        <div ng-controller='DeathrayMenuController'>
+            <ul>
+                <li class='menu-disabled-{{isDisabled}}' ng-click='stun()'>Stun</li>
+                ...
+            </ul>
+            <div/>
+            <script
+                src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js">
+            </script>
+            <script>
+                        function DeathrayMenuController($scope) {
+                            $scope.isDisabled = false;
+                            $scope.stun = function () {
+// stun the target, then disable menu to allow regeneration
+                                $scope.isDisabled = 'true';
+                            };
+                        }
+            </script>
+    </body>
+</html>
